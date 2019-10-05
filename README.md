@@ -31,28 +31,8 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`vue-i18n-cli hello [FILE]`](#vue-i18n-cli-hello-file)
 * [`vue-i18n-cli help [COMMAND]`](#vue-i18n-cli-help-command)
-
-## `vue-i18n-cli hello [FILE]`
-
-describe the command here
-
-```
-USAGE
-  $ vue-i18n-cli hello [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ vue-i18n-cli hello
-  hello world from ./src/hello.ts!
-```
-
-_See code: [src/commands/hello.ts](https://github.com/sina-mirhejazi/vue-i18n-cli/blob/v0.0.0/src/commands/hello.ts)_
+* [`vue-i18n-cli init [FILE]`](#vue-i18n-cli-init-file)
 
 ## `vue-i18n-cli help [COMMAND]`
 
@@ -70,4 +50,20 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.1/src/commands/help.ts)_
+
+## `vue-i18n-cli init [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ vue-i18n-cli init [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/init.ts](https://github.com/sina-mirhejazi/vue-i18n-cli/blob/v0.0.0/src/commands/init.ts)_
 <!-- commandsstop -->
