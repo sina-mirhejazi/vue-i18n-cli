@@ -19,28 +19,28 @@ vue-i18n-cli
 <!-- usage -->
 ```sh-session
 $ npm install -g vue-i18n-cli
-$ vue-i18n-cli COMMAND
+$ vue-i18n COMMAND
 running command...
-$ vue-i18n-cli (-v|--version|version)
-vue-i18n-cli/0.0.0 darwin-x64 node-v12.10.0
-$ vue-i18n-cli --help [COMMAND]
+$ vue-i18n (-v|--version|version)
+vue-i18n-cli/0.1.0 darwin-x64 node-v12.10.0
+$ vue-i18n --help [COMMAND]
 USAGE
-  $ vue-i18n-cli COMMAND
+  $ vue-i18n COMMAND
 ...
 ```
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`vue-i18n-cli help [COMMAND]`](#vue-i18n-cli-help-command)
-* [`vue-i18n-cli init [FILE]`](#vue-i18n-cli-init-file)
+* [`vue-i18n help [COMMAND]`](#vue-i18n-help-command)
+* [`vue-i18n init SRC`](#vue-i18n-init-src)
 
-## `vue-i18n-cli help [COMMAND]`
+## `vue-i18n help [COMMAND]`
 
-display help for vue-i18n-cli
+display help for vue-i18n
 
 ```
 USAGE
-  $ vue-i18n-cli help [COMMAND]
+  $ vue-i18n help [COMMAND]
 
 ARGUMENTS
   COMMAND  command to show help for
@@ -51,19 +51,20 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.1/src/commands/help.ts)_
 
-## `vue-i18n-cli init [FILE]`
+## `vue-i18n init SRC`
 
-describe the command here
+Initialize vue-i18n on your project
 
 ```
 USAGE
-  $ vue-i18n-cli init [FILE]
+  $ vue-i18n init SRC
+
+ARGUMENTS
+  SRC  path to src folder
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help  show CLI help
 ```
 
-_See code: [src/commands/init.ts](https://github.com/sina-mirhejazi/vue-i18n-cli/blob/v0.0.0/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/sina-mirhejazi/vue-i18n-cli/blob/v0.1.0/src/commands/init.ts)_
 <!-- commandsstop -->
