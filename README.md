@@ -18,11 +18,11 @@ vue-i18n-cli
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g vue-i18n-cli
+$ npm install -g @sina-mirhejazi/vue-i18n-cli
 $ vue-i18n COMMAND
 running command...
 $ vue-i18n (-v|--version|version)
-vue-i18n-cli/0.1.1 darwin-x64 node-v12.10.0
+@sina-mirhejazi/vue-i18n-cli/0.1.1 darwin-x64 node-v12.10.0
 $ vue-i18n --help [COMMAND]
 USAGE
   $ vue-i18n COMMAND
