@@ -1,6 +1,6 @@
 {
-  "name": "vue-i18n-cli",
-  "version": "0.1.0",
+  "name": "@sina-mirhejazi/vue-i18n-cli",
+  "version": "0.1.1",
   "author": "Sina Mirhejazi",
   "bin": {
     "vue-i18n": "./bin/run"

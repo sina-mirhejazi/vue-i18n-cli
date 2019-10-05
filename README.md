@@ -22,7 +22,7 @@ $ npm install -g vue-i18n-cli
 $ vue-i18n COMMAND
 running command...
 $ vue-i18n (-v|--version|version)
-vue-i18n-cli/0.1.0 darwin-x64 node-v12.10.0
+vue-i18n-cli/0.1.1 darwin-x64 node-v12.10.0
 $ vue-i18n --help [COMMAND]
 USAGE
   $ vue-i18n COMMAND
@@ -66,5 +66,5 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/init.ts](https://github.com/sina-mirhejazi/vue-i18n-cli/blob/v0.1.0/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/sina-mirhejazi/vue-i18n-cli/blob/v0.1.1/src/commands/init.ts)_
 <!-- commandsstop -->
