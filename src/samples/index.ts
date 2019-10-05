@@ -1,4 +1,5 @@
-import Vue from 'vue';
+export default function generateIndex(): string {
+  return `import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 
 import dateTimeFormats from '@/localization/dateTimeFormats';
@@ -18,3 +19,5 @@ const i18n = new VueI18n({
 });
 
 export default i18n;
+`
+}

@@ -1,4 +1,5 @@
-export default {
+export default function generateDateTimeFormats(): string {
+  return `export default {
   en: {
     short: {
       year: 'numeric', month: 'numeric', day: 'numeric',
@@ -13,3 +14,5 @@ export default {
     },
   },
 };
+`
+}

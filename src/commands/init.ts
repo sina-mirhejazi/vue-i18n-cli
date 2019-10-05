@@ -6,6 +6,10 @@ import * as Listr from 'listr'
 import * as path from 'path'
 import {promisify} from 'util'
 
+import generateEn from '../samples/en'
+import generateIndex from '../samples/index'
+import generateDateTimeFormats from '../samples/date-time-formats'
+
 export default class Init extends Command {
   static description = 'Initialize vue-i18n on your project'
 
@@ -22,6 +26,7 @@ export default class Init extends Command {
   ]
 
   async run() {
+    this.config.debug = 1
     const {args} = this.parse(Init)
 
     await this.exec(args.src)
@@ -76,25 +81,24 @@ Please add these codes to your main.js
 
   async copyNecessaryFiles(pathToSrc: string) {
     const absoluteSrcPath = path.join(process.cwd(), pathToSrc)
-    const absoluteSamplesPath = path.join(this.config.options.root, '../../src/samples')
 
-    const copyFile = promisify(fileSystem.copyFile)
     const mkdir = promisify(fileSystem.mkdir)
+    const writeFile = promisify(fileSystem.writeFile)
 
     await mkdir(`${absoluteSrcPath}/localization/languages`, {recursive: true})
 
     const files = [
       {
-        from: `${absoluteSamplesPath}/index.js`,
-        to: `${absoluteSrcPath}/localization/index.js`
+        to: `${absoluteSrcPath}/localization/index.js`,
+        content: generateIndex()
       },
       {
-        from: `${absoluteSamplesPath}/dateTimeFormats.js`,
-        to: `${absoluteSrcPath}/localization/dateTimeFormats.js`
+        to: `${absoluteSrcPath}/localization/dateTimeFormats.js`,
+        content: generateDateTimeFormats(),
       },
       {
-        from: `${absoluteSamplesPath}/en.js`,
-        to: `${absoluteSrcPath}/localization/languages/en.js`
+        to: `${absoluteSrcPath}/localization/languages/en.js`,
+        content: generateEn()
       }
     ]
 
@@ -102,7 +106,7 @@ Please add these codes to your main.js
 
     for (let file of files) {
       promises.push(
-        copyFile(file.from, file.to)
+        writeFile(file.to, file.content)
       )
     }
 
