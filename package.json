@@ -3,13 +3,17 @@
   "version": "0.0.0",
   "author": "Sina Mirhejazi",
   "bin": {
-    "vue-i18n-cli": "./bin/run"
+    "vue-i18n": "./bin/run"
   },
   "bugs": "https://github.com/sina-mirhejazi/vue-i18n-cli/issues",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
+    "@types/listr": "^0.14.2",
+    "chalk": "^2.4.2",
+    "execa": "^2.0.5",
+    "listr": "^0.14.3",
     "tslib": "^1"
   },
   "devDependencies": {
@@ -44,7 +48,7 @@
   "main": "lib/index.js",
   "oclif": {
     "commands": "./lib/commands",
-    "bin": "vue-i18n-cli",
+    "bin": "vue-i18n",
     "plugins": [
       "@oclif/plugin-help"
     ]
