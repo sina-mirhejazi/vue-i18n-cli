@@ -31,8 +31,25 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`vue-i18n diff [FILE]`](#vue-i18n-diff-file)
 * [`vue-i18n help [COMMAND]`](#vue-i18n-help-command)
 * [`vue-i18n init SRC`](#vue-i18n-init-src)
+
+## `vue-i18n diff [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ vue-i18n diff [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/diff.ts](https://github.com/sina-mirhejazi/vue-i18n-cli/blob/v0.1.1/src/commands/diff.ts)_
 
 ## `vue-i18n help [COMMAND]`
 
