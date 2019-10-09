@@ -4,7 +4,6 @@ import Listr from 'listr'
 import path from 'path'
 import { exec } from 'child_process';
 import {loadTokens, printTokens} from '../utils/token'
-import { resolveCname } from 'dns';
 
 export default class Unused extends Command {
   static description = 'describe the command here'
@@ -31,7 +30,7 @@ export default class Unused extends Command {
   unusedTokens: Array<string> = []
 
   async run() {
-    const {args, flags} = this.parse(Unused)
+    const {args} = this.parse(Unused)
 
     await this.exec(args.src, args.language)
   }
