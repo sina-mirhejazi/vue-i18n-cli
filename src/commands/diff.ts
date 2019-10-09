@@ -1,11 +1,8 @@
 import {Command, flags} from '@oclif/command'
 import chalk from 'chalk'
-import execa from 'execa'
-import fileSystem from 'fs'
 import Listr from 'listr'
 import path from 'path'
-import {promisify} from 'util'
-import { async } from 'rxjs/internal/scheduler/async';
+import {loadTokens, printTokens} from '../utils/token'
 
 export default class Diff extends Command {
   static description = 'describe the command here'
@@ -39,9 +36,7 @@ export default class Diff extends Command {
   additionalTokens: Array<string> = [];
 
   async run() {
-    this.config.debug = 1
-
-    const {args, flags} = this.parse(Diff)
+    const {args} = this.parse(Diff)
 
     await this.exec(args.src, args.firstLanguage, args.secondLanguage)
   }
@@ -53,15 +48,15 @@ export default class Diff extends Command {
         task: async () => {
           const absoluteSrcPath = path.join(process.cwd(), pathToSrc, 'localization/languages', `${firstLanguage}.json`)
 
-          this.firstLanguageTokens = await this.loadFile(absoluteSrcPath)
+          this.firstLanguageTokens = await loadTokens(absoluteSrcPath)
         },
       },
       {
         title: 'Loading second language content',
         task: async () => {
-          const absoluteSrcPath = path.join(process.cwd(), pathToSrc, 'localization/languages', `${secondLanguage}.json`)
+          const absoluteLanguagePath = path.join(process.cwd(), pathToSrc, 'localization/languages', `${secondLanguage}.json`)
 
-          this.secondLanguageTokens = await this.loadFile(absoluteSrcPath)
+          this.secondLanguageTokens = await loadTokens(absoluteLanguagePath)
         },
       },
       {
@@ -84,25 +79,23 @@ export default class Diff extends Command {
 
     this.log(chalk.red.bold('Missing Tokens:'))
 
-    this.printTokens(this.missingTokens)
+    printTokens(this.missingTokens, this.log)
 
     this.log(chalk.red.green('Adittional Tokens:'))
 
-    this.printTokens(this.additionalTokens)
-  }
-
-  async loadFile(pathToFile: string) {
-    const readFile = promisify(fileSystem.readFile);
-
-    const rawData = await readFile(pathToFile, 'utf-8')
-
-    return JSON.parse(rawData)
+    printTokens(this.additionalTokens, this.log)
   }
 
   checkForMissingTokens(primaryContent: any, secondaryContent: any, tokens: Array<string>, path: string = '') {
     Object.keys(primaryContent)
       .forEach((key: string) => {
-        const currentPath = `${path}.${key}`;
+        let currentPath: string;
+
+        if(path) {
+          currentPath = `${path}.${key}`
+        } else {
+          currentPath = key
+        }
 
         if(!secondaryContent.hasOwnProperty(key)) {
           tokens.push(currentPath);
@@ -112,14 +105,5 @@ export default class Diff extends Command {
       })
   }
 
-  printTokens(token: Array<string>) {
-    if(!token.length) {
-      this.log(chalk.bgWhite.black('Nothing to show'));
-      return;
-    }
   
-    token.forEach((item, index) => {
-      this.log(`${index+1}. %s`, chalk.bgWhite.black(item.substr(1)));
-    });
-  }
 }

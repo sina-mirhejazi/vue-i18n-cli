@@ -6,7 +6,7 @@ import Listr from 'listr'
 import path from 'path'
 import {promisify} from 'util'
 
-import generateEn from '../samples/en'
+import generateLang from '../samples/lang'
 import generateIndex from '../samples/index'
 import generateDateTimeFormats from '../samples/date-time-formats'
 
@@ -55,12 +55,12 @@ export default class Init extends Command {
     this.log(
 `
 Please add these codes to your main.js
-  > ${chalk.greenBright('import i18n from \'@/localization\';')}
+  > ${chalk.greenBright('+ import i18n from \'@/localization\';')}
   >
-  > ${chalk.greenBright('new Vue({')}
-  > ${chalk.greenBright('  i18n,')}
-  > ${chalk.greenBright('  render: h => h(App),')}
-  > ${chalk.greenBright('}).$mount(\'#app\');')}'
+  >   new Vue({
+  > ${chalk.greenBright('+    i18n,')}
+  >     render: h => h(App),
+  >   }).$mount(\'#app\');
 `
     )
   }
@@ -97,7 +97,7 @@ Please add these codes to your main.js
       },
       {
         to: `${absoluteSrcPath}/localization/languages/en.json`,
-        content: generateEn()
+        content: generateLang()
       }
     ]
 
