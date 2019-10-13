@@ -27,6 +27,7 @@ USAGE
 * [`vue-i18n diff SRC FIRSTLANGUAGE SECONDLANGUAGE`](#vue-i18n-diff-src-firstlanguage-secondlanguage)
 * [`vue-i18n help [COMMAND]`](#vue-i18n-help-command)
 * [`vue-i18n init SRC`](#vue-i18n-init-src)
+* [`vue-i18n unused [FILE]`](#vue-i18n-unused-file)
 
 ## `vue-i18n diff SRC FIRSTLANGUAGE SECONDLANGUAGE`
 
@@ -80,4 +81,20 @@ OPTIONS
 ```
 
 _See code: [src/commands/init.ts](https://github.com/sina-mirhejazi/vue-i18n-cli/blob/v0.2.0/src/commands/init.ts)_
+
+## `vue-i18n unused [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ vue-i18n unused [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/unused.ts](https://github.com/sina-mirhejazi/vue-i18n-cli/blob/v0.2.0/src/commands/unused.ts)_
 <!-- commandsstop -->
