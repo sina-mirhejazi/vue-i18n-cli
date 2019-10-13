@@ -15,7 +15,7 @@ $ npm install -g @sina-mirhejazi/vue-i18n-cli
 $ vue-i18n COMMAND
 running command...
 $ vue-i18n (-v|--version|version)
-@sina-mirhejazi/vue-i18n-cli/0.2.0 darwin-x64 node-v12.11.1
+@sina-mirhejazi/vue-i18n-cli/0.3.0 darwin-x64 node-v12.11.1
 $ vue-i18n --help [COMMAND]
 USAGE
   $ vue-i18n COMMAND
@@ -27,7 +27,7 @@ USAGE
 * [`vue-i18n diff SRC FIRSTLANGUAGE SECONDLANGUAGE`](#vue-i18n-diff-src-firstlanguage-secondlanguage)
 * [`vue-i18n help [COMMAND]`](#vue-i18n-help-command)
 * [`vue-i18n init SRC`](#vue-i18n-init-src)
-* [`vue-i18n unused [FILE]`](#vue-i18n-unused-file)
+* [`vue-i18n unused SRC LANGUAGE`](#vue-i18n-unused-src-language)
 
 ## `vue-i18n diff SRC FIRSTLANGUAGE SECONDLANGUAGE`
 
@@ -46,7 +46,7 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/diff.ts](https://github.com/sina-mirhejazi/vue-i18n-cli/blob/v0.2.0/src/commands/diff.ts)_
+_See code: [src/commands/diff.ts](https://github.com/sina-mirhejazi/vue-i18n-cli/blob/v0.3.0/src/commands/diff.ts)_
 
 ## `vue-i18n help [COMMAND]`
 
@@ -80,21 +80,23 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/init.ts](https://github.com/sina-mirhejazi/vue-i18n-cli/blob/v0.2.0/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/sina-mirhejazi/vue-i18n-cli/blob/v0.3.0/src/commands/init.ts)_
 
-## `vue-i18n unused [FILE]`
+## `vue-i18n unused SRC LANGUAGE`
 
 describe the command here
 
 ```
 USAGE
-  $ vue-i18n unused [FILE]
+  $ vue-i18n unused SRC LANGUAGE
+
+ARGUMENTS
+  SRC       path to src folder
+  LANGUAGE  language name code
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help  show CLI help
 ```
 
-_See code: [src/commands/unused.ts](https://github.com/sina-mirhejazi/vue-i18n-cli/blob/v0.2.0/src/commands/unused.ts)_
+_See code: [src/commands/unused.ts](https://github.com/sina-mirhejazi/vue-i18n-cli/blob/v0.3.0/src/commands/unused.ts)_
 <!-- commandsstop -->
